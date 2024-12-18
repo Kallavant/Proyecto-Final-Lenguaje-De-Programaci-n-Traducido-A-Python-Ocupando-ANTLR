@@ -1,0 +1,94 @@
+programa {
+    // Función para calcular el factorial
+    funcion factorial(numero n) {
+        crea numero resultado = 1;
+        crea numero i = 1;
+        mientras (i <= n) {
+            resultado = resultado × i;
+            i = i + 1;
+        }
+        regresa resultado;
+    }
+
+    // Función para verificar si un número es primo
+    funcion esPrimo(numero num) {
+        crea numero divisor = 2;
+        mientras (divisor < num) {
+            crea numero residuo = num ÷ divisor;
+            si (residuo × divisor = num) {
+                regresa falso;
+            }
+            divisor = divisor + 1;
+        }
+        regresa verdadero;
+    }
+
+    // Función para calcular la potencia
+    funcion potencia(decimal base, numero exponente) {
+        crea numero resultado = 1;
+        para (crea numero i = 0; i < exponente; i = i + 1) {
+            resultado = resultado × base;
+        }
+        regresa resultado;
+    }
+
+    // Programa principal
+    crea texto nombre;
+    pregunta "¿Cuál es tu nombre?" guarda texto en nombre;
+    muestra "¡Hola, " + nombre + "!";
+
+    // Crear y usar un arreglo
+    crea arreglo numero numeros = [1, 2, 3, 4, 5];
+    crea matriz numero numeros2 = [1, 2, 3, 4],[1, 2, 3, 4, 5];
+
+    numeros[4] = 10;
+    muestra numeros;
+
+    numeros2[1][2] = 50;
+    muestra numeros2;
+
+    crea numero suma = 0;
+    
+    para (crea numero i = 0; i < 5; i = i + 1) {
+        suma = suma + numeros[i];
+    }
+
+    crea texto txt = "numero: " + 5;
+    
+    muestra "La suma del arreglo es: " + suma;
+
+    // Uso de decimales y operaciones matemáticas
+    crea decimal pi = 3.14159;
+    crea decimal radio;
+    pregunta "Ingresa el radio del círculo: " guarda decimal en radio;
+    crea decimal area = pi × potencia(radio, 2);
+    muestra "El área del círculo es: " + area;
+
+    // Uso de condicionales y lógicos
+    crea numero num;
+    pregunta "Ingresa un número para verificar si es primo: " guarda numero en num;
+    
+    si (num <= 1) {
+        muestra "El número debe ser mayor que 1";
+    } sino si (esPrimo(num)) {
+        muestra num + " es un número primo";
+    } sino {
+        muestra num + " no es un número primo";
+    }
+
+    // Uso de operaciones lógicas
+    crea logico a = verdadero;
+    crea logico b = falso;
+    
+    si ((a o b) y no(a y b)) {
+        muestra "Operación lógica exitosa";
+    }
+
+    // Cálculo de factorial usando la función
+    crea numero f = factorial(5);
+    muestra "El factorial de 5 es: " + f;
+
+    // Uso de raíz cuadrada
+    crea numero raizCuadrada = √(16);
+    muestra "La raíz cuadrada de 16 es: " + raizCuadrada;
+}

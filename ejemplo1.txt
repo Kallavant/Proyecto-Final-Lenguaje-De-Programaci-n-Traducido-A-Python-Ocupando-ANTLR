@@ -1,0 +1,72 @@
+programa {
+    // Función para calcular el factorial de un número
+    funcion factorial(numero n) {
+        crea numero resultado = 1;
+        
+        si (n <= 1) {
+            regresa 1;
+        }
+        para (crea numero i = 1; i <= n; i = i + 1) {
+            resultado = resultado × i;
+
+            para (crea numero j = 1; j <= n; j = j + 2) {
+            resultado = resultado × i;
+        }
+        }
+        regresa resultado;
+    }
+
+    // Función para verificar si un número es primo
+    funcion esPrimo(numero num) {
+        si (num <= 1) {
+            regresa falso;
+        }
+        
+        para (crea numero i = 2; i < num; i = i + 1) {
+            si (num ÷ i = 0) {
+                regresa falso;
+            }
+        }
+        regresa verdadero;
+    }
+
+    // Programa principal
+    muestra "Bienvenido al programa de cálculos matemáticos";
+    
+    // Solicitar un número al usuario
+    pregunta "Por favor, ingrese un número: " guarda numero en numero1;
+    
+    // Crear variables para almacenar resultados
+    crea numero fact = factorial(numero1);
+    crea logico primo = esPrimo(numero1);
+    
+    // Mostrar resultados
+    muestra "El factorial de " + numero1 + " es: " + fact;
+    
+    si (primo = verdadero) {
+        muestra numero1 + " es un número primo";
+    }
+    sino {
+        muestra numero1 + " no es un número primo";
+    }
+    
+    // Ejemplo de uso de arreglo
+    crea arreglo numero numeros = [1, 2, 3, 4, 5];
+    crea numero suma = 0;
+    
+    // Calcular suma usando mientras
+    crea numero i = 0;
+    mientras (i < 5) {
+        suma = suma + numeros[i];
+        i = i + 1;
+    }
+    
+    muestra "La suma del arreglo es: " + suma;
+    
+    // Ejemplo de operaciones matemáticas
+    crea decimal raizCuadrada = √(numero1);
+    crea decimal potencia = numero1 ^ 2;
+    
+    muestra "La raíz cuadrada de " + numero1 + " es: " + raizCuadrada;
+    muestra "El cuadrado de " + numero1 + " es: " + potencia;
+}
